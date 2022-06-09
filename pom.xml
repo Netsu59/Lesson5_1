@@ -115,7 +115,7 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>checkstyle::check</id>
+                        <id>checkstyle-check</id>
                         <phase>validate</phase>
                         <goals>
                             <goal>check</goal>
