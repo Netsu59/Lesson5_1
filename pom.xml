@@ -120,6 +120,11 @@
                         <goals>
                             <goal>check</goal>
                         </goals>
+                        <configuration>
+                            <rules>
+
+                            </rules>
+                        </configuration>
                     </execution>
                     <execution>
                         <id>jacoco-report</id>
