@@ -22,26 +22,7 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>3.1.2</version>
-            <type>maven-plugin</type>
-        </dependency>
-
     </dependencies>
-<!--    <reporting>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-checkstyle-plugin</artifactId>-->
-<!--                <version>3.1.2</version>-->
-<!--                <configuration>-->
-<!--                    <configLocation>checkstyle.xml</configLocation>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </reporting>-->
 
     <build>
         <plugins>
@@ -73,21 +54,21 @@
                         </goals>
                         <configuration>
                             <rules>
-                            <rule>
-                                <element>BUNDLE</element>
-                                <limits>
-                                    <limit>
-                                        <counter>INSTRUCTION</counter>
-                                        <value>COVEREDRATIO</value>
-                                        <minimum>100%</minimum>
-                                    </limit>
-                                    <limit>
-                                        <counter>CLASS</counter>
-                                        <value>MISSEDCOUNT</value>
-                                        <maximum>0</maximum>
-                                    </limit>
-                                </limits>
-                             </rule>
+                                <rule>
+                                    <element>BUNDLE</element>
+                                    <limits>
+                                        <limit>
+                                            <counter>INSTRUCTION</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>100%</minimum>
+                                        </limit>
+                                        <limit>
+                                            <counter>CLASS</counter>
+                                            <value>MISSEDCOUNT</value>
+                                            <maximum>0</maximum>
+                                        </limit>
+                                    </limits>
+                                </rule>
                             </rules>
                         </configuration>
                     </execution>
@@ -105,29 +86,30 @@
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>4.7.0.0</version>
                 <executions>
-                <execution>
-                    <id>spotbugs-check</id>
-                    <phase>verify</phase>
-                    <goals>
-                        <goal>check</goal>
-                    </goals>
-                    <configuration>
+                    <execution>
+                        <id>spotbugs-check</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
 
-                    </configuration>
-                </execution>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.1.2</version>
                 <executions>
                     <execution>
-                                            <id>checkstyle-check</id>
-                                            <phase>validate</phase>
-                                            <goals>
-                                                <goal>check</goal>
-                                            </goals>
+                        <id>checkstyle-check</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
                         <configuration>
                             <configLocation>checkstyle.xml</configLocation>
                         </configuration>
@@ -137,5 +119,3 @@
         </plugins>
     </build>
 </project>
-
-
